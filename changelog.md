@@ -1,3 +1,7 @@
+### 0.9.2
+
+- Fix errors and warnings from deprecation.
+- Fix inventory+ integration by wrapping inventory categories in an empty div.
 ### 0.9.1
 
 - Try Bug fix: https://github.com/sdenec/tidy5e-sheet/issues/763
