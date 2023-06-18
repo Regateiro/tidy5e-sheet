@@ -205,7 +205,7 @@ export default class Tidy5eNPC extends dnd5e.applications.actor.ActorSheet5eNPC 
 		const context = await super.getData(options);
 
 		Object.keys(context.abilities).forEach((id) => {
-			context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+			context.abilities[id].abbr = CONFIG.DND5E.abilities[id].abbreviation;
 		});
 
 		// Journal HTML enrichment

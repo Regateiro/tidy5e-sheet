@@ -70,7 +70,7 @@ export class Tidy5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter 
 		const context = await super.getData(options);
 
 		Object.keys(context.abilities).forEach((id) => {
-			context.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[id];
+			context.abilities[id].abbr = CONFIG.DND5E.abilities[id].abbreviation;
 		});
 
 		// Journal HTML enrichment
@@ -1071,6 +1071,12 @@ Hooks.once("ready", (app, html, data) => {
 		//ui.notifications?.error(errorText);
 		//throw new Error(errorText);
 	}
+
+	// Fix all the warnings when Token doesn't have a collection
+	if (!CONFIG['Token'].collection) {
+		CONFIG['Token'].collection = {};
+		CONFIG['Token'].collection.instance = null;
+	};
 });
 
 Hooks.on("renderAbilityUseDialog", (app, html, options) => {
