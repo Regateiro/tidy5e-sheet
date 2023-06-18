@@ -6,6 +6,7 @@
   <ul class="inventory-list items-list {{#if actor.flags.tidy5e-sheet.allow-edit}}unlocked{{/if}}">
     {{#each sections as |section sid|}}
 
+    <div>
     <li class="items-header">
       <h3 class="item-name">{{localize section.label}}</h3>
 
@@ -223,6 +224,7 @@
       </li>
       {{/if}}
     </ul>
+    </div>
     {{/each}}
   </ul>
 
