@@ -2,8 +2,11 @@ INSTALL_PATH=~/.local/share/FoundryVTT/Data/modules/tidy5e-sheet
 
 .PHONY: compress install
 
-compress:
-	cd src/ && zip -r module.zip * && mv module.zip ../
+build:
+	npm run build
+
+compress: build
+	cd dist/tidy5e-sheet/ && zip -r module.zip * && mv module.zip ../../
 
 install: compress
 	rm -rf $(INSTALL_PATH)
